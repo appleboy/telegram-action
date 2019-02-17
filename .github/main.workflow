@@ -9,5 +9,5 @@ action "Post message to Telegram" {
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  args = "Hello World"
+  args = "Hello World!"
 }

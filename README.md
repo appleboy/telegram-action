@@ -2,6 +2,8 @@
 
 [GitHub Action](https://developer.github.com/actions/) for sending a Telegram notification message.
 
+<img src="./images/telegram-notification.png">
+
 ## Usage
 
 ```
