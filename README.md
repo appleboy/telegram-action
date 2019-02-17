@@ -6,8 +6,10 @@
 
 ## Usage
 
+Send custom message as blow
+
 ```
-action "Post message to Telegram" {
+action "Send Custom Message" {
   uses = "appleboy/telegram-action@master"
   secrets = [
     "TELEGRAM_TOKEN",
@@ -16,6 +18,20 @@ action "Post message to Telegram" {
   args = "A new commit has been pushed."
 }
 ```
+
+Send the default message. Please remove args
+
+```
+action "Send Default Message" {
+  uses = "appleboy/telegram-action@master"
+  secrets = [
+    "TELEGRAM_TOKEN",
+    "TELEGRAM_TO",
+  ]
+}
+```
+
+<img src="images/telegram-workflow.png">
 
 ## Secrets
 
