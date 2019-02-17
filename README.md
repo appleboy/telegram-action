@@ -19,7 +19,7 @@ action "Post message to Telegram" {
 
 ## Secrets
 
-Geting started with [Telegram Bot API](https://core.telegram.org/bots/api).
+Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
 
 * `TELEGRAM_TOKEN`: Telegram authorization token.
 * `TELEGRAM_TO`: Unique identifier for this chat.
