@@ -1,10 +1,8 @@
-# 🚀 Telegram for GitHub Actions
+workflow "Send Notification" {
+  on = "push"
+  resolves = ["Post message to Telegram"]
+}
 
-[GitHub Action](https://developer.github.com/actions/) for sending a Telegram notification message.
-
-## Usage
-
-```
 action "Post message to Telegram" {
   uses = "appleboy/telegram-action@master"
   secrets = [
@@ -13,4 +11,3 @@ action "Post message to Telegram" {
   ]
   args = "Hello World"
 }
-```
