@@ -2,6 +2,6 @@
 
 set -eu
 
-export TELEGRAM_MESSAGE=$?
+export TELEGRAM_MESSAGE="$*"
 
 /bin/drone-telegram
