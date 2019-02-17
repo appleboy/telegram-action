@@ -1,7 +1,7 @@
 FROM golang:1.11
 
 # Github labels
-LABEL "com.github.actions.name"="Action Telegram"
+LABEL "com.github.actions.name"="Telegram Notify"
 LABEL "com.github.actions.description"="Sending a Telegram notification message"
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="blue"
