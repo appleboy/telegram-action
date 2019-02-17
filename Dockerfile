@@ -11,7 +11,7 @@ LABEL "homepage"="https://github.com/appleboy/telegram-action"
 LABEL "maintainer"="Bo-Yi Wu <appleboy.tw@gmail.com>"
 LABEL "version"="0.0.1"
 
-ENV TELEGRAM_VERSION=1.4.0
+ENV TELEGRAM_VERSION=1.4.1
 ENV OS_ARCH=linux-amd64
 
 RUN wget https://github.com/appleboy/drone-telegram/releases/download/${TELEGRAM_VERSION}/drone-telegram-${TELEGRAM_VERSION}-${OS_ARCH} -O /bin/drone-telegram

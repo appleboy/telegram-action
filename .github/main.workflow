@@ -1,13 +1,24 @@
 workflow "Send Notification" {
   on = "push"
-  resolves = ["Post message to Telegram"]
+  resolves = [
+    "Send Custom Message",
+    "Send Default Message"
+  ]
 }
 
-action "Post message to Telegram" {
+action "Send Custom Message" {
   uses = "appleboy/telegram-action@master"
   secrets = [
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
   args = "A new commit has been pushed."
+}
+
+action "Send Default Message" {
+  uses = "appleboy/telegram-action@master"
+  secrets = [
+    "TELEGRAM_TOKEN",
+    "TELEGRAM_TO",
+  ]
 }
