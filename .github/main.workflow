@@ -9,5 +9,5 @@ action "Post message to Telegram" {
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  args = "Hello World!"
+  args = "A new commit has been pushed."
 }
