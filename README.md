@@ -1,2 +1,3 @@
-# telegram-action
-GitHub Action for send notification to telegram
+# 🚀 Telegram for GitHub Actions
+
+[GitHub Action](https://developer.github.com/actions/) for sending a Telegram notification message.
