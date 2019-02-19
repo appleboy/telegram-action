@@ -33,6 +33,34 @@ action "Send Default Message" {
 
 <img src="images/telegram-workflow.png">
 
+## Environment variables
+
+* PHOTO - Optional. photo message
+* DOCUMENT - Optional. document message
+* STICKER - Optional. sticker message
+* AUDIO - Optional. audio message
+* VOICE - Optional. voice message
+* LOCATION - Optional. location message
+* VENUE - Optional. venue message
+* VIDEO - Optional. video message
+* DEBUG - Optional. enable debug mode
+
+### Example
+
+```
+action "Send photo message" {
+  uses = "appleboy/telegram-action@master"
+  secrets = [
+    "TELEGRAM_TOKEN",
+    "TELEGRAM_TO",
+  ]
+  env = {
+    PHOTO = "tests/github.png"
+  }
+  args = "A new commit has been pushed."
+}
+```
+
 ## Secrets
 
 Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
