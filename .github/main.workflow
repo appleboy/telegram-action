@@ -32,6 +32,7 @@ action "Send Photo message" {
   ]
   env = {
     PHOTO = "tests/github.png"
+    DOCUMENT = "tests/gophercolor.png"
   }
   args = "send photo message."
 }
