@@ -22,10 +22,6 @@ action "Send Default Message" {
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  env = {
-    A = "A"
-    B = "B"
-  }
 }
 
 action "Send Photo Message" {
