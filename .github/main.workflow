@@ -2,7 +2,8 @@ workflow "Send Notification" {
   on = "push"
   resolves = [
     "Send Custom Message",
-    "Send Default Message"
+    "Send Default Message",
+    "Send Photo Message",
   ]
 }
 
@@ -23,14 +24,15 @@ action "Send Default Message" {
   ]
 }
 
-action "Send photo message" {
+action "Send Photo Message" {
   uses = "appleboy/telegram-action@master"
+  env = {
+    PHOTO = "tests/github.png"
+    DOCUMENT = "tests/gophercolor.png"
+  }
   secrets = [
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  env = {
-    PHOTO = "tests/github.png"
-  }
-  args = "A new commit has been pushed."
+  args = "send photo message."
 }
