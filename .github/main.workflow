@@ -3,7 +3,7 @@ workflow "Send Notification" {
   resolves = [
     "Send Custom Message",
     "Send Default Message",
-    "Send Photo Message"
+    "Send Photo Message",
   ]
 }
 
@@ -26,13 +26,13 @@ action "Send Default Message" {
 
 action "Send Photo message" {
   uses = "appleboy/telegram-action@master"
+  env = {
+    PHOTO = "tests/github.png",
+    DOCUMENT = "tests/gophercolor.png",
+  }
   secrets = [
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  env = {
-    PHOTO = "tests/github.png"
-    DOCUMENT = "tests/gophercolor.png"
-  }
   args = "send photo message."
 }
