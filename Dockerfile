@@ -1,4 +1,4 @@
-FROM appleboy/drone-telegram:1.4.1-linux-amd64
+FROM appleboy/drone-telegram:1.4.2-linux-amd64
 
 # Github labels
 LABEL "com.github.actions.name"="Telegram Notify"

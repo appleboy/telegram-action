@@ -22,3 +22,15 @@ action "Send Default Message" {
     "TELEGRAM_TO",
   ]
 }
+
+action "Send photo message" {
+  uses = "appleboy/telegram-action@master"
+  secrets = [
+    "TELEGRAM_TOKEN",
+    "TELEGRAM_TO",
+  ]
+  env = {
+    PHOTO = "tests/github.png"
+  }
+  args = "A new commit has been pushed."
+}
