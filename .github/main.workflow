@@ -28,7 +28,7 @@ action "Send Default Message" {
   }
 }
 
-action "Send Photo message" {
+action "Send Photo Message" {
   uses = "appleboy/telegram-action@master"
   env = {
     PHOTO = "tests/github.png"
