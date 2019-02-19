@@ -22,13 +22,17 @@ action "Send Default Message" {
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
+  env = {
+    A = "A"
+    B = "B"
+  }
 }
 
 action "Send Photo message" {
   uses = "appleboy/telegram-action@master"
   env = {
-    PHOTO = "tests/github.png",
-    DOCUMENT = "tests/gophercolor.png",
+    PHOTO = "tests/github.png"
+    DOCUMENT = "tests/gophercolor.png"
   }
   secrets = [
     "TELEGRAM_TOKEN",
