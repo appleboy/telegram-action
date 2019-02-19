@@ -19,7 +19,7 @@ action "Send Custom Message" {
 }
 ```
 
-Send the default message. Please remove args
+Remove `args` to send the default message.
 
 ```
 action "Send Default Message" {
