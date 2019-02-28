@@ -44,6 +44,7 @@ action "Send Default Message" {
 * VENUE - Optional. venue message
 * VIDEO - Optional. video message
 * DEBUG - Optional. enable debug mode
+* FORMAT - Optional. `markdown` or `html`
 
 ### Example
 
