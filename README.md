@@ -6,7 +6,7 @@
 
 ## Usage
 
-Send custom message as blow
+Send custom message and see the custom variable as blow.
 
 ```
 action "Send Custom Message" {
@@ -15,7 +15,7 @@ action "Send Custom Message" {
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  args = "A new commit has been pushed."
+  args = "A new commit has been pushed. commit sha: {{ commit.sha }}"
 }
 ```
 
