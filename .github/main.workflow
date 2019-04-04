@@ -13,7 +13,7 @@ action "Send Custom Message" {
     "TELEGRAM_TOKEN",
     "TELEGRAM_TO",
   ]
-  args = "A new commit has been pushed."
+  args = "A new commit has been pushed. commit: {{ commit.sha }}"
 }
 
 action "Send Default Message" {
