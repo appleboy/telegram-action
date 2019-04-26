@@ -110,7 +110,7 @@ See the result: (get chat id like `65382999`)
 
 ## Template variable
 
-| Github Variable   | Telegram Temaplte Variable |
+| Github Variable   | Telegram Template Variable |
 |-------------------|----------------------------|
 | GITHUB_REPOSITORY | repo                       |
 | GITHUB_ACTOR      | repo.namespace             |
