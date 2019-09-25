@@ -10,6 +10,7 @@ jobs:
     - name: Clean install dependencies and build
       run: |
         pwd
+        ls -al
         ls -al /
         ls -al /home/runner/work
 
