@@ -7,14 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Clean install dependencies and build
-      run: |
-        pwd
-        ls -al
-        ls -al /
-        ls -al /home/runner/work
-
-
     - name: send custom message
       uses: appleboy/telegram-action@master
       env:
@@ -43,6 +35,14 @@ jobs:
         message: send photo message
         photo: './tests/github.png'
         document: './tests/gophercolor.png'
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+
+    - name: send location message
+      uses: appleboy/telegram-action@master
+      with:
+        location: '24.9163213,121.1424972'
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
