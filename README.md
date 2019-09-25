@@ -74,6 +74,20 @@ send location message:
     TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
 ```
 
+send custom message:
+
+```yml
+- name: send custom message
+  uses: appleboy/telegram-action@master
+  env:
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+  with:
+    message: |
+      The ${{ github.event_name }} event triggered final step.
+      echo This event is a pull request that had an assignee removed.
+```
+
 ## Secrets
 
 Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
