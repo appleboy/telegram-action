@@ -38,3 +38,7 @@ jobs:
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+
+    - name: Clean install dependencies and build
+      run: |
+        ls -al
