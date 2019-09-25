@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Clean install dependencies and build
+      working-directory: ./tests
+      run: |
+        ls -al
+
     - name: send custom message
       uses: appleboy/telegram-action@master
       env:
@@ -38,8 +43,3 @@ jobs:
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
-
-    - name: Clean install dependencies and build
-      working-directory: ./tests
-      run: |
-        ls -al
