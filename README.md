@@ -2,36 +2,35 @@
 
 [GitHub Action](https://developer.github.com/actions/) for sending a Telegram notification message.
 
-<img src="./images/telegram-notification.png">
+![notification](./images/telegram-notification.png)
+
+[![Actions Status](https://github.com/appleboy/facebook-telegram/workflows/telegram%20message/badge.svg)](https://github.com/appleboy/facebook-action/actions)
 
 ## Usage
 
 Send custom message and see the custom variable as blow.
 
-```
-action "Send Custom Message" {
-  uses = "appleboy/telegram-action@master"
-  secrets = [
-    "TELEGRAM_TOKEN",
-    "TELEGRAM_TO",
-  ]
-  args = "A new commit has been pushed. commit sha: {{ commit.sha }}"
-}
+```yml
+- name: send custom message
+  uses: appleboy/telegram-action@master
+  env:
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+  with:
+    args: The ${{ github.event_name }} event triggered first step.
 ```
 
 Remove `args` to send the default message.
 
-```
-action "Send Default Message" {
-  uses = "appleboy/telegram-action@master"
-  secrets = [
-    "TELEGRAM_TOKEN",
-    "TELEGRAM_TO",
-  ]
-}
+```yml
+- name: send default message
+  uses: appleboy/telegram-action@master
+  env:
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
 ```
 
-<img src="images/telegram-workflow.png">
+![workflow](./images/telegram-workflow.png)
 
 ## Environment variables
 
@@ -48,18 +47,16 @@ action "Send Default Message" {
 
 ### Example
 
-```
-action "Send photo message" {
-  uses = "appleboy/telegram-action@master"
-  secrets = [
-    "TELEGRAM_TOKEN",
-    "TELEGRAM_TO",
-  ]
-  env = {
-    PHOTO = "tests/github.png"
-  }
-  args = "A new commit has been pushed."
-}
+```yml
+- name: send photo message
+  uses: appleboy/telegram-action@master
+  with:
+    message: send photo message
+    photo: tests/github.png
+    document: tests/gophercolor.png
+  env:
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
 ```
 
 ## Secrets
@@ -71,8 +68,8 @@ Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
 
 How to get unique identifier from telegram api:
 
-```
-$ curl https://api.telegram.org/bot<token>/getUpdates
+```bash
+curl https://api.telegram.org/bot<token>/getUpdates
 ```
 
 See the result: (get chat id like `65382999`)
