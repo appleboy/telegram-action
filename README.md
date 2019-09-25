@@ -32,7 +32,19 @@ Remove `args` to send the default message.
 
 ![workflow](./images/telegram-workflow.png)
 
-## Environment variables
+send location message:
+
+```yml
+- name: send location message
+  uses: appleboy/telegram-action@master
+  with:
+    location: '24.9163213,121.1424972'
+  env:
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+```
+
+## Input variables
 
 * photo - optional. photo message
 * document - optional. document message
