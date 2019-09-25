@@ -35,16 +35,16 @@ action "Send Default Message" {
 
 ## Environment variables
 
-* PHOTO - Optional. photo message
-* DOCUMENT - Optional. document message
-* STICKER - Optional. sticker message
-* AUDIO - Optional. audio message
-* VOICE - Optional. voice message
-* LOCATION - Optional. location message
-* VENUE - Optional. venue message
-* VIDEO - Optional. video message
-* DEBUG - Optional. enable debug mode
-* FORMAT - Optional. `markdown` or `html`
+* photo - optional. photo message
+* document - optional. document message
+* sticker - optional. sticker message
+* audio - optional. audio message
+* voice - optional. voice message
+* location - optional. location message
+* venue - optional. venue message
+* video - optional. video message
+* debug - optional. enable debug mode
+* format - optional. `markdown` or `html`
 
 ### Example
 

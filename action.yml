@@ -1,0 +1,31 @@
+name: 'Telegram Message Notify'
+description: 'Sending a Telegram message'
+author: 'Bo-Yi Wu'
+inputs:
+  photo:
+    description: 'send the photo message.'
+  document:
+    description: 'send the document message.'
+  sticker:
+    description: 'send the sticker message.'
+  audio:
+    description: 'send the audio message.'
+  voice:
+    description: 'send the voice message.'
+  location:
+    description: 'send the location message.'
+  venue:
+    description: 'send the venue message.'
+  video:
+    description: 'send the video message.'
+  debug:
+    description: 'enable debug mode.'
+  format:
+    description: 'message format: markdown or html'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'message-square'
+  color: 'blue'
