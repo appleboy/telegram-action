@@ -33,8 +33,8 @@ jobs:
       uses: appleboy/telegram-action@master
       with:
         message: send photo message
-        photo: tests/github.png
-        document: tests/gophercolor.png
+        photo: './tests/github.png'
+        document: './tests/gophercolor.png'
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
