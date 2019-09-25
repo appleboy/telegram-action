@@ -32,19 +32,6 @@ Remove `args` to send the default message.
 
 ![workflow](./images/telegram-workflow.png)
 
-send location message:
-
-```yml
-- name: send location message
-  uses: appleboy/telegram-action@master
-  with:
-    location: '24.9163213 121.1424972'
-    venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
-  env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
-```
-
 ## Input variables
 
 * photo - optional. photo message
@@ -60,6 +47,8 @@ send location message:
 
 ### Example
 
+send photo message:
+
 ```yml
 - name: send photo message
   uses: appleboy/telegram-action@master
@@ -67,6 +56,19 @@ send location message:
     message: send photo message
     photo: tests/github.png
     document: tests/gophercolor.png
+  env:
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+```
+
+send location message:
+
+```yml
+- name: send location message
+  uses: appleboy/telegram-action@master
+  with:
+    location: '24.9163213 121.1424972'
+    venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
   env:
     TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
     TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
