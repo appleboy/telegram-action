@@ -40,5 +40,6 @@ jobs:
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
 
     - name: Clean install dependencies and build
+      working-directory: ./tests
       run: |
         ls -al
