@@ -6,7 +6,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-
+    - uses: actions/checkout@master
     - name: send custom message with args
       uses: appleboy/telegram-action@master
       env:
