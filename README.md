@@ -50,6 +50,7 @@ Remove `args` to send the default message.
 send photo message:
 
 ```yml
+- uses: actions/checkout@master
 - name: send photo message
   uses: appleboy/telegram-action@master
   with:
