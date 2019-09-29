@@ -11,13 +11,22 @@
 Send custom message and see the custom variable as blow.
 
 ```yml
-- name: send custom message
-  uses: appleboy/telegram-action@master
-  env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
-  with:
-    args: The ${{ github.event_name }} event triggered first step.
+name: telegram message
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: send custom message with args
+      uses: appleboy/telegram-action@master
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+      with:
+        args: The ${{ github.event_name }} event triggered first step.
 ```
 
 Remove `args` to send the default message.
