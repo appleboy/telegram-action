@@ -52,3 +52,10 @@ jobs:
         message: |
           The ${{ github.event_name }} event triggered final step.
           echo This event is a pull request that had an assignee removed.
+
+    - name: send message file
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message_file: tests/message.txt
