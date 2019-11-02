@@ -22,10 +22,9 @@ jobs:
     - uses: actions/checkout@master
     - name: send custom message with args
       uses: appleboy/telegram-action@master
-      env:
-        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-        TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
       with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
         args: The ${{ github.event_name }} event triggered first step.
 ```
 
@@ -34,9 +33,9 @@ Remove `args` to send the default message.
 ```yml
 - name: send default message
   uses: appleboy/telegram-action@master
-  env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+  with:
+    to: ${{ secrets.TELEGRAM_TO }}
+    token: ${{ secrets.TELEGRAM_TOKEN }}
 ```
 
 ![workflow](./images/telegram-workflow.png)
@@ -64,12 +63,11 @@ send photo message:
 - name: send photo message
   uses: appleboy/telegram-action@master
   with:
+    to: ${{ secrets.TELEGRAM_TO }}
+    token: ${{ secrets.TELEGRAM_TOKEN }}
     message: send photo message
     photo: tests/github.png
     document: tests/gophercolor.png
-  env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
 ```
 
 send location message:
@@ -78,11 +76,10 @@ send location message:
 - name: send location message
   uses: appleboy/telegram-action@master
   with:
+    to: ${{ secrets.TELEGRAM_TO }}
+    token: ${{ secrets.TELEGRAM_TOKEN }}
     location: '24.9163213 121.1424972'
     venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
-  env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
 ```
 
 send custom message:
@@ -90,10 +87,9 @@ send custom message:
 ```yml
 - name: send custom message
   uses: appleboy/telegram-action@master
-  env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-    TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
   with:
+    to: ${{ secrets.TELEGRAM_TO }}
+    token: ${{ secrets.TELEGRAM_TOKEN }}
     message: |
       The ${{ github.event_name }} event triggered final step.
       echo This event is a pull request that had an assignee removed.
