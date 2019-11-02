@@ -2,6 +2,14 @@ name: 'Telegram Message Notify'
 description: 'Sending a Telegram message'
 author: 'Bo-Yi Wu'
 inputs:
+  to:
+    description: 'telegram user'
+  token:
+    description: 'telegram token'
+  message:
+    description: 'telegram message'
+  message_file:
+    description: 'overwrite the default message template with the contents of the specified file'
   photo:
     description: 'send the photo message.'
   document:
@@ -22,8 +30,6 @@ inputs:
     description: 'enable debug mode.'
   format:
     description: 'message format: markdown or html'
-  message_file:
-    description: 'overwrite the default message template with the contents of the specified file'
 runs:
   using: 'docker'
   image: 'Dockerfile'
