@@ -53,6 +53,7 @@ Remove `args` to send the default message.
 * video - optional. video message
 * debug - optional. enable debug mode
 * format - optional. `markdown` or `html`
+* message_file - optional. overwrite the default message template with the contents of the specified file.
 
 ### Example
 

@@ -22,6 +22,8 @@ inputs:
     description: 'enable debug mode.'
   format:
     description: 'message format: markdown or html'
+  message_file:
+    description: 'overwrite the default message template with the contents of the specified file'
 runs:
   using: 'docker'
   image: 'Dockerfile'
