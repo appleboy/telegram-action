@@ -54,7 +54,7 @@ Remove `args` to send the default message.
 * format - optional. `markdown` or `html`
 * message_file - optional. overwrite the default message template with the contents of the specified file.
 
-### Example
+## Example
 
 send photo message:
 
