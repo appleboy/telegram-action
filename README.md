@@ -112,8 +112,8 @@ send message using custom proxy (support `http`, `https`, and `socks5`)
 
 Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
 
-* `TELEGRAM_TOKEN`: Telegram authorization token.
-* `TELEGRAM_TO`: Unique identifier for this chat.
+* `token`: Telegram authorization token.
+* `to`: Unique identifier for this chat.
 
 How to get unique identifier from telegram api:
 
