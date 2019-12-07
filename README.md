@@ -96,6 +96,18 @@ send custom message:
       echo This event is a pull request that had an assignee removed.
 ```
 
+send message using custom proxy (support `http`, `https`, and `socks5`)
+
+```yml
+- name: send message using socks5 proxy URL
+  uses: appleboy/telegram-action@master
+  with:
+    to: ${{ secrets.TELEGRAM_TO }}
+    token: ${{ secrets.TELEGRAM_TOKEN }}
+    socks5: "http://222.124.154.19:23500"
+    message: Send message from socks5 proxy URL.
+```
+
 ## Secrets
 
 Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
