@@ -65,5 +65,5 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        socks5: "socks5://67.204.21.1:64312"
+        socks5: "http://222.124.154.19:23500"
         message: Send message from socks5 proxy URL.
