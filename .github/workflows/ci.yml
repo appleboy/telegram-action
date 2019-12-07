@@ -59,3 +59,11 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message_file: tests/message.txt
+
+    - name: send message using socks5 proxy URL
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        socks5: 67.204.21.1:64312
+        message: Send message from socks5 proxy URL.

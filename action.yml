@@ -10,6 +10,8 @@ inputs:
     description: 'telegram message'
   message_file:
     description: 'overwrite the default message template with the contents of the specified file'
+  socks5:
+    description: 'support socks5 proxy URL'
   photo:
     description: 'send the photo message.'
   document:

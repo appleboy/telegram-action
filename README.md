@@ -42,6 +42,7 @@ Remove `args` to send the default message.
 
 ## Input variables
 
+* socks5 - optional. support socks5 proxy URL
 * photo - optional. photo message
 * document - optional. document message
 * sticker - optional. sticker message
