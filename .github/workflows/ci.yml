@@ -21,7 +21,8 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           The ${{ github.event_name }} event triggered second step.
-          show the github varable: ${{ github.ref }}
+          show the github varable ref: ${{ github.ref }}
+          show the github varable commit: ${{ github.sha }}
 
     - name: send default message
       uses: appleboy/telegram-action@master
