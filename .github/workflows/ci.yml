@@ -23,6 +23,8 @@ jobs:
           The ${{ github.event_name }} event triggered second step.
           show the github varable ref: ${{ github.ref }}
           show the github varable commit: ${{ github.sha }}
+          show the github varable ref: {{ commit.ref }}
+          show the github varable commit: {{ commit.sha }}
 
     - name: send default message
       uses: appleboy/telegram-action@master
