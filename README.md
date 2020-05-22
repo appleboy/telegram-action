@@ -52,7 +52,7 @@ Remove `args` to send the default message.
 * venue - optional. venue message
 * video - optional. video message
 * debug - optional. enable debug mode
-* format - optional. `markdown` or `html`
+* format - optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)
 * message - optional. custom message
 * message_file - optional. overwrite the default message template with the contents of the specified file.
 
