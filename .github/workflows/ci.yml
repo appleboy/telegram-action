@@ -65,10 +65,16 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message_file: tests/message.txt
 
-    - name: send message using socks5 proxy URL
+    # - name: send message using socks5 proxy URL
+    #   uses: appleboy/telegram-action@master
+    #   with:
+    #     to: ${{ secrets.TELEGRAM_TO }}
+    #     token: ${{ secrets.TELEGRAM_TOKEN }}
+    #     socks5: "http://222.124.154.19:23500"
+    #     message: Send message from socks5 proxy URL.
+    - name: try multiple message
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        socks5: "http://222.124.154.19:23500"
-        message: Send message from socks5 proxy URL.
+        message: ${{ github.actor }}:${{ github.event.head_commit.message }}
