@@ -77,4 +77,6 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.actor }}:${{ github.event.head_commit.message }}
+        message: |
+          ${{ github.actor }}:${{ github.event.head_commit.message }} \n
+          Testing
