@@ -79,5 +79,5 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         format: html
         message: |
-          ⚡️ <a href="https://github.com/aszenz/repo/commit/${{ github.event.push.after }}">Commits</a> pushed to master by <em>${{ github.event.push.pusher.name }}</em>,<a href="https://github.com/aszenz/repo/pull/${{ steps.set-variables.outputs.pr_no }}">PR</a> ⚡️
+          ⚡️ <a href="https://github.com/aszenz/repo/commit/${{ github.event.push.after }}">Commits</a> pushed to master by <em>${{ github.event.push.pusher.name }}</em> ⚡️
           ${{ github.actor }}:${{ github.event.head_commit.message }}
