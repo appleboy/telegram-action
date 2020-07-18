@@ -8,7 +8,7 @@
 
 ## Usage
 
-Send custom message and see the custom variable as blow.
+Send custom message and see the custom variable as below.
 
 ```yml
 name: telegram message
