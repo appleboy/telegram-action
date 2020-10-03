@@ -89,13 +89,13 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          link preview https://google.com.tw
+          show link preview https://google.com.tw
 
     - name: disable link preview
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        webpage_preview: false
+        disable_web_page_preview: true
         message: |
-          link preview https://google.com.tw
+          disable link preview https://google.com.tw
