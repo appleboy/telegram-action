@@ -55,6 +55,7 @@ Remove `args` to send the default message.
 * format - optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)
 * message - optional. custom message
 * message_file - optional. overwrite the default message template with the contents of the specified file.
+* webpage_preview - optional. disables link previews for links in this message. default is `true`.
 
 ## Example
 
