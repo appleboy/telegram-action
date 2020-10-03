@@ -32,6 +32,9 @@ inputs:
     description: 'enable debug mode.'
   format:
     description: 'message format: markdown or html'
+  webpage_preview:
+    description: 'disables link previews for links in this message'
+    default: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
