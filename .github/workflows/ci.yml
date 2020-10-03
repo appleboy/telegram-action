@@ -8,14 +8,14 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: send custom message with args
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         args: The ${{ github.event_name }} event triggered first step.
 
     - name: send message useing with
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -27,13 +27,13 @@ jobs:
           show the github varable commit: {{ commit.sha }}
 
     - name: send default message
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
 
     - name: send photo message
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
         document: './tests/gophercolor.png'
 
     - name: send location message
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
         venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
 
     - name: send custom message
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -59,7 +59,7 @@ jobs:
           echo This event is a pull request that had an assignee removed.
 
     - name: send message file
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -84,7 +84,7 @@ jobs:
     #       ${{ github.actor }}:${{ github.event.head_commit.message }}
 
     - name: link preview
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -92,7 +92,7 @@ jobs:
           show link preview https://google.com.tw
 
     - name: disable link preview
-      uses: appleboy/telegram-action@master
+      uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
