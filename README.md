@@ -8,6 +8,8 @@
 
 ## Usage
 
+**NOTE**: If you are getting "Error: Chat not found", then you need to look at this stackoverflow's answer [here](https://stackoverflow.com/a/41291666).
+
 Send custom message and see the custom variable as below.
 
 ```yml
