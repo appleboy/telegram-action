@@ -58,6 +58,7 @@ Remove `args` to send the default message.
 * message - optional. custom message
 * message_file - optional. overwrite the default message template with the contents of the specified file.
 * disable_web_page_preview - optional. disables link previews for links in this message. default is `false`.
+* disable_notification - optional. disables notifications for this message, supports sending a message without notification. default is `false`.
 
 ## Example
 

@@ -34,6 +34,8 @@ inputs:
     description: 'message format: markdown or html'
   disable_web_page_preview:
     description: 'disables link previews for links in this message'
+  disable_notification:
+    description: 'disables notifications for this message, supports sending a message without notification,'
 runs:
   using: 'docker'
   image: 'Dockerfile'
