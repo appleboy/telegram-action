@@ -97,8 +97,13 @@ send custom message:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
     message: |
-      The ${{ github.event_name }} event triggered final step.
-      echo This event is a pull request that had an assignee removed.
+      ${{ github.actor }} created commit
+      
+      Commit message: ${{ github.event.commits[0].message }}
+
+      Repository: ${{ github.repository }}
+
+      See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 ```
 
 send message using custom proxy (support `http`, `https`, and `socks5`) like `socks5://127.0.0.1:1080` or `http://222.124.154.19:23500`
