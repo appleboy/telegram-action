@@ -21,13 +21,18 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: send custom message with args
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: The ${{ github.event_name }} event triggered first step.
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 ```
 
 Remove `args` to send the default message.
@@ -86,19 +91,6 @@ send location message:
     token: ${{ secrets.TELEGRAM_TOKEN }}
     location: '24.9163213 121.1424972'
     venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
-```
-
-send custom message:
-
-```yml
-- name: send custom message
-  uses: appleboy/telegram-action@master
-  with:
-    to: ${{ secrets.TELEGRAM_TO }}
-    token: ${{ secrets.TELEGRAM_TOKEN }}
-    message: |
-      The ${{ github.event_name }} event triggered final step.
-      echo This event is a pull request that had an assignee removed.
 ```
 
 send message using custom proxy (support `http`, `https`, and `socks5`) like `socks5://127.0.0.1:1080` or `http://222.124.154.19:23500`
