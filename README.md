@@ -115,7 +115,7 @@ Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
 How to get unique identifier from telegram api:
 
 ```bash
-curl https://api.telegram.org/bot<token>/getUpdates
+curl https://api.telegram.org/bot<Token>/getMe
 ```
 
 See the result: (get chat id like `65382999`)
