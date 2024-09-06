@@ -1,111 +1,110 @@
 name: telegram message
 on: [push]
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: send custom message with args
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: The ${{ github.event_name }} event triggered first step.
+      - uses: actions/checkout@master
+      - name: send custom message with args
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: The ${{ github.event_name }} event triggered first step.
 
-    - name: send message using with
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          The ${{ github.event_name }} event triggered second step.
-          show the github variable ref: ${{ github.ref }}
-          show the github variable commit: ${{ github.sha }}
-          show the github variable ref: {{ commit.ref }}
-          show the github variable commit: {{ commit.sha }}
-          Commit Message: ${{ github.event.head_commit.message }}
+      - name: send message using with
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            The ${{ github.event_name }} event triggered second step.
+            show the github variable ref: ${{ github.ref }}
+            show the github variable commit: ${{ github.sha }}
+            show the github variable ref: {{ commit.ref }}
+            show the github variable commit: {{ commit.sha }}
+            Commit Message: ${{ github.event.head_commit.message }}
 
-    - name: send default message
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+      - name: send default message
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
 
-    - name: send photo message
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: send photo message
-        photo: './tests/github.png'
-        document: './tests/gophercolor.png'
+      - name: send photo message
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: send photo message
+          photo: "./tests/github.png"
+          document: "./tests/gophercolor.png"
 
-    - name: send location message
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        location: '24.9163213 121.1424972'
-        venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
+      - name: send location message
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          location: "24.9163213 121.1424972"
+          venue: "35.661777 139.704051 竹北體育館 新竹縣竹北市"
 
-    - name: send custom message
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          The ${{ github.event_name }} event triggered final step.
-          echo This event is a pull request that had an assignee removed.
+      - name: send custom message
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            The ${{ github.event_name }} event triggered final step.
+            echo This event is a pull request that had an assignee removed.
 
-    - name: send message file
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message_file: tests/message.txt
+      - name: send message file
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message_file: tests/message.txt
 
-    # - name: send message using socks5 proxy URL
-    #   uses: appleboy/telegram-action@master
-    #   with:
-    #     to: ${{ secrets.TELEGRAM_TO }}
-    #     token: ${{ secrets.TELEGRAM_TOKEN }}
-    #     socks5: "http://222.124.154.19:23500"
-    #     message: Send message from socks5 proxy URL.
+      # - name: send message using socks5 proxy URL
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     socks5: "http://222.124.154.19:23500"
+      #     message: Send message from socks5 proxy URL.
 
-    # - name: try multiple message
-    #   uses: appleboy/telegram-action@master
-    #   with:
-    #     to: ${{ secrets.TELEGRAM_TO }}
-    #     token: ${{ secrets.TELEGRAM_TOKEN }}
-    #     format: html
-    #     message: |
-    #       ⚡️ <a href="https://github.com/aszenz/repo/commit/${{ github.event.push.after }}">Commits</a> pushed to master by <em>${{ github.event.push.pusher.name }}</em> ⚡️
-    #       ${{ github.actor }}:${{ github.event.head_commit.message }}
+      # - name: try multiple message
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     format: html
+      #     message: |
+      #       ⚡️ <a href="https://github.com/aszenz/repo/commit/${{ github.event.push.after }}">Commits</a> pushed to master by <em>${{ github.event.push.pusher.name }}</em> ⚡️
+      #       ${{ github.actor }}:${{ github.event.head_commit.message }}
 
-    - name: link preview
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          show link preview https://google.com.tw
+      - name: link preview
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            show link preview https://google.com.tw
 
-    - name: disable link preview
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        disable_web_page_preview: true
-        message: |
-          disable link preview https://google.com.tw
+      - name: disable link preview
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_web_page_preview: true
+          message: |
+            disable link preview https://google.com.tw
 
-    - name: sending a message without notification
-      uses: ./
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        disable_notification: true
-        message: |
-          disable link preview https://google.com.tw
+      - name: sending a message without notification
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_notification: true
+          message: |
+            disable link preview https://google.com.tw
