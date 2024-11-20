@@ -12,29 +12,29 @@
 
 发送自定义消息并查看如下的自定义变量。
 
-## Input variables
+## 输入变量
 
-| Variable                 | Description                                                                                                             |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| socks5                   | optional. support socks5 proxy URL                                                                                      |
-| photo                    | optional. photo message                                                                                                 |
-| document                 | optional. document message                                                                                              |
-| sticker                  | optional. sticker message                                                                                               |
-| audio                    | optional. audio message                                                                                                 |
-| voice                    | optional. voice message                                                                                                 |
-| location                 | optional. location message                                                                                              |
-| venue                    | optional. venue message                                                                                                 |
-| video                    | optional. video message                                                                                                 |
-| debug                    | optional. enable debug mode                                                                                             |
-| format                   | optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)             |
-| message                  | optional. custom message                                                                                                |
-| message_file             | optional. overwrite the default message template with the contents of the specified file.                               |
-| disable_web_page_preview | optional. disables link previews for links in this message. default is `false`.                                         |
-| disable_notification     | optional. disables notifications for this message, supports sending a message without notification. default is `false`. |
+| 变量                     | 描述                                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| socks5                   | 可选。支持 socks5 代理 URL                                                                              |
+| photo                    | 可选。照片消息                                                                                          |
+| document                 | 可选。文档消息                                                                                          |
+| sticker                  | 可选。贴纸消息                                                                                          |
+| audio                    | 可选。音频消息                                                                                          |
+| voice                    | 可选。语音消息                                                                                          |
+| location                 | 可选。位置消息                                                                                          |
+| venue                    | 可选。场馆消息                                                                                          |
+| video                    | 可选。视频消息                                                                                          |
+| debug                    | 可选。启用调试模式                                                                                      |
+| format                   | 可选。`markdown` 或 `html`。参见 [MarkdownV2 样式](https://core.telegram.org/bots/api#markdownv2-style) |
+| message                  | 可选。自定义消息                                                                                        |
+| message_file             | 可选。用指定文件的内容覆盖默认消息模板。                                                                |
+| disable_web_page_preview | 可选。禁用此消息中链接的预览。默认值为 `false`。                                                        |
+| disable_notification     | 可选。禁用此消息的通知，支持发送无通知的消息。默认值为 `false`。                                        |
 
-## Example
+## 示例
 
-send photo message:
+发送照片消息：
 
 ```yml
 - uses: actions/checkout@master
@@ -48,7 +48,7 @@ send photo message:
     document: tests/gophercolor.png
 ```
 
-send location message:
+发送位置消息：
 
 ```yml
 - name: send location message
@@ -60,7 +60,7 @@ send location message:
     venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
 ```
 
-send message using custom proxy (support `http`, `https`, and `socks5`) like `socks5://127.0.0.1:1080` or `http://222.124.154.19:23500`
+使用自定义代理发送消息（支持 `http`、`https` 和 `socks5`），如 `socks5://127.0.0.1:1080` 或 `http://222.124.154.19:23500`
 
 ```yml
 - name: send message using socks5 proxy URL
@@ -74,18 +74,18 @@ send message using custom proxy (support `http`, `https`, and `socks5`) like `so
 
 ## Secrets
 
-Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
+开始使用 [Telegram Bot API](https://core.telegram.org/bots/api)。
 
-* `token`: Telegram authorization token.
-* `to`: Unique identifier for this chat.
+* `token`: Telegram 授权令牌。
+* `to`: 此聊天的唯一标识符。
 
-How to get unique identifier from telegram api:
+如何从 Telegram API 获取唯一标识符：
 
 ```bash
 curl https://api.telegram.org/bot<token>/getUpdates
 ```
 
-See the result: (get chat id like `65382999`)
+查看结果：（获取聊天 ID，如 `65382999`）
 
 ```json
 {
@@ -118,16 +118,16 @@ See the result: (get chat id like `65382999`)
 }
 ```
 
-## Template variable
+## 模板变量
 
-| Github Variable   | Telegram Template Variable |
-| ----------------- | -------------------------- |
-| GITHUB_REPOSITORY | repo                       |
-| GITHUB_ACTOR      | repo.namespace             |
-| GITHUB_SHA        | commit.sha                 |
-| GITHUB_REF        | commit.ref                 |
-| GITHUB_WORKFLOW   | github.workflow            |
-| GITHUB_ACTION     | github.action              |
-| GITHUB_EVENT_NAME | github.event.name          |
-| GITHUB_EVENT_PATH | github.event.path          |
-| GITHUB_WORKSPACE  | github.workspace           |
+| GitHub 变量       | Telegram 模板变量 |
+| ----------------- | ----------------- |
+| GITHUB_REPOSITORY | repo              |
+| GITHUB_ACTOR      | repo.namespace    |
+| GITHUB_SHA        | commit.sha        |
+| GITHUB_REF        | commit.ref        |
+| GITHUB_WORKFLOW   | github.workflow   |
+| GITHUB_ACTION     | github.action     |
+| GITHUB_EVENT_NAME | github.event.name |
+| GITHUB_EVENT_PATH | github.event.path |
+| GITHUB_WORKSPACE  | github.workspace  |
