@@ -49,21 +49,23 @@ Remove `args` to send the default message.
 
 ## Input variables
 
-* socks5 - optional. support socks5 proxy URL
-* photo - optional. photo message
-* document - optional. document message
-* sticker - optional. sticker message
-* audio - optional. audio message
-* voice - optional. voice message
-* location - optional. location message
-* venue - optional. venue message
-* video - optional. video message
-* debug - optional. enable debug mode
-* format - optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)
-* message - optional. custom message
-* message_file - optional. overwrite the default message template with the contents of the specified file.
-* disable_web_page_preview - optional. disables link previews for links in this message. default is `false`.
-* disable_notification - optional. disables notifications for this message, supports sending a message without notification. default is `false`.
+| Variable                 | Description                                                                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| socks5                   | optional. support socks5 proxy URL                                                                                      |
+| photo                    | optional. photo message                                                                                                 |
+| document                 | optional. document message                                                                                              |
+| sticker                  | optional. sticker message                                                                                               |
+| audio                    | optional. audio message                                                                                                 |
+| voice                    | optional. voice message                                                                                                 |
+| location                 | optional. location message                                                                                              |
+| venue                    | optional. venue message                                                                                                 |
+| video                    | optional. video message                                                                                                 |
+| debug                    | optional. enable debug mode                                                                                             |
+| format                   | optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)             |
+| message                  | optional. custom message                                                                                                |
+| message_file             | optional. overwrite the default message template with the contents of the specified file.                               |
+| disable_web_page_preview | optional. disables link previews for links in this message. default is `false`.                                         |
+| disable_notification     | optional. disables notifications for this message, supports sending a message without notification. default is `false`. |
 
 ## Example
 
@@ -154,7 +156,7 @@ See the result: (get chat id like `65382999`)
 ## Template variable
 
 | Github Variable   | Telegram Template Variable |
-|-------------------|----------------------------|
+| ----------------- | -------------------------- |
 | GITHUB_REPOSITORY | repo                       |
 | GITHUB_ACTOR      | repo.namespace             |
 | GITHUB_SHA        | commit.sha                 |
