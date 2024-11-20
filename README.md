@@ -1,6 +1,6 @@
 # 🚀 Telegram for GitHub Actions
 
-[GitHub Action](https://github.com/features/actions) for sending a Telegram notification message.
+[GitHub Action](https://github.com/features/actions) for sending Telegram notification messages.
 
 ![notification](./images/telegram-notification.png)
 
@@ -8,9 +8,9 @@
 
 ## Usage
 
-**NOTE**: If you are getting "Error: Chat not found", then you need to look at this stackoverflow's answer [here](https://stackoverflow.com/a/41291666).
+**Note**: If you receive the "Error: Chat not found" error, please refer to this StackOverflow answer [here](https://stackoverflow.com/a/41291666).
 
-Send custom message and see the custom variable as below.
+Send a custom message and view the custom variables below.
 
 ```yml
 name: telegram message
@@ -51,25 +51,25 @@ Remove `args` to send the default message.
 
 | Variable                 | Description                                                                                                             |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| socks5                   | optional. support socks5 proxy URL                                                                                      |
-| photo                    | optional. photo message                                                                                                 |
-| document                 | optional. document message                                                                                              |
-| sticker                  | optional. sticker message                                                                                               |
-| audio                    | optional. audio message                                                                                                 |
-| voice                    | optional. voice message                                                                                                 |
-| location                 | optional. location message                                                                                              |
-| venue                    | optional. venue message                                                                                                 |
-| video                    | optional. video message                                                                                                 |
-| debug                    | optional. enable debug mode                                                                                             |
+| socks5                   | optional. Support socks5 proxy URL                                                                                      |
+| photo                    | optional. Photo message                                                                                                 |
+| document                 | optional. Document message                                                                                              |
+| sticker                  | optional. Sticker message                                                                                               |
+| audio                    | optional. Audio message                                                                                                 |
+| voice                    | optional. Voice message                                                                                                 |
+| location                 | optional. Location message                                                                                              |
+| venue                    | optional. Venue message                                                                                                 |
+| video                    | optional. Video message                                                                                                 |
+| debug                    | optional. Enable debug mode                                                                                             |
 | format                   | optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)             |
-| message                  | optional. custom message                                                                                                |
-| message_file             | optional. overwrite the default message template with the contents of the specified file.                               |
-| disable_web_page_preview | optional. disables link previews for links in this message. default is `false`.                                         |
-| disable_notification     | optional. disables notifications for this message, supports sending a message without notification. default is `false`. |
+| message                  | optional. Custom message                                                                                                |
+| message_file             | optional. Overwrite the default message template with the contents of the specified file.                               |
+| disable_web_page_preview | optional. Disables link previews for links in this message. Default is `false`.                                         |
+| disable_notification     | optional. Disables notifications for this message, supports sending a message without notification. Default is `false`. |
 
 ## Example
 
-send photo message:
+Send photo message:
 
 ```yml
 - uses: actions/checkout@master
@@ -83,7 +83,7 @@ send photo message:
     document: tests/gophercolor.png
 ```
 
-send location message:
+Send location message:
 
 ```yml
 - name: send location message
@@ -95,7 +95,7 @@ send location message:
     venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
 ```
 
-send message using custom proxy (support `http`, `https`, and `socks5`) like `socks5://127.0.0.1:1080` or `http://222.124.154.19:23500`
+Send message using custom proxy (support `http`, `https`, and `socks5`) like `socks5://127.0.0.1:1080` or `http://222.124.154.19:23500`
 
 ```yml
 - name: send message using socks5 proxy URL
