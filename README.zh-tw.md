@@ -60,7 +60,7 @@
     venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
 ```
 
-使用自定義���理發送消息（支持 `http`、`https` 和 `socks5`），如 `socks5://127.0.0.1:1080` 或 `http://222.124.154.19:23500`
+使用自定義代理發送消息（支持 `http`、`https` 和 `socks5`），如 `socks5://127.0.0.1:1080` 或 `http://222.124.154.19:23500`
 
 ```yml
 - name: send message using socks5 proxy URL
@@ -74,18 +74,18 @@
 
 ## Secrets
 
-Getting started with [Telegram Bot API](https://core.telegram.org/bots/api).
+開始使用 [Telegram Bot API](https://core.telegram.org/bots/api)。
 
-* `token`: Telegram authorization token.
-* `to`: Unique identifier for this chat.
+* `token`: Telegram 授權令牌。
+* `to`: 此聊天的唯一標識符。
 
-How to get unique identifier from telegram api:
+如何從 telegram api 獲取唯一標識符：
 
 ```bash
 curl https://api.telegram.org/bot<token>/getUpdates
 ```
 
-See the result: (get chat id like `65382999`)
+查看結果：（獲取聊天 ID，如 `65382999`）
 
 ```json
 {
@@ -118,16 +118,16 @@ See the result: (get chat id like `65382999`)
 }
 ```
 
-## Template variable
+## 模板變數
 
-| Github Variable   | Telegram Template Variable |
-| ----------------- | -------------------------- |
-| GITHUB_REPOSITORY | repo                       |
-| GITHUB_ACTOR      | repo.namespace             |
-| GITHUB_SHA        | commit.sha                 |
-| GITHUB_REF        | commit.ref                 |
-| GITHUB_WORKFLOW   | github.workflow            |
-| GITHUB_ACTION     | github.action              |
-| GITHUB_EVENT_NAME | github.event.name          |
-| GITHUB_EVENT_PATH | github.event.path          |
-| GITHUB_WORKSPACE  | github.workspace           |
+| Github 變數       | Telegram 模板變數 |
+| ----------------- | ----------------- |
+| GITHUB_REPOSITORY | repo              |
+| GITHUB_ACTOR      | repo.namespace    |
+| GITHUB_SHA        | commit.sha        |
+| GITHUB_REF        | commit.ref        |
+| GITHUB_WORKFLOW   | github.workflow   |
+| GITHUB_ACTION     | github.action     |
+| GITHUB_EVENT_NAME | github.event.name |
+| GITHUB_EVENT_PATH | github.event.path |
+| GITHUB_WORKSPACE  | github.workspace  |
