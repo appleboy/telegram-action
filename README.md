@@ -66,6 +66,7 @@ Remove `args` to send the default message.
 | format                   | optional. `markdown` or `html`. See [MarkdownV2 style](https://core.telegram.org/bots/api#markdownv2-style)             |
 | message                  | optional. Custom message                                                                                                |
 | message_file             | optional. Overwrite the default message template with the contents of the specified file.                               |
+| message_thread_id        | optional. Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.             |
 | disable_web_page_preview | optional. Disables link previews for links in this message. Default is `false`.                                         |
 | disable_notification     | optional. Disables notifications for this message, supports sending a message without notification. Default is `false`. |
 
@@ -95,6 +96,18 @@ Send location message:
     token: ${{ secrets.TELEGRAM_TOKEN }}
     location: '24.9163213 121.1424972'
     venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
+```
+
+Send a message to a specific forum topic (thread):
+
+```yml
+- name: send message to forum topic
+  uses: appleboy/telegram-action@master
+  with:
+    to: ${{ secrets.TELEGRAM_TO }}
+    token: ${{ secrets.TELEGRAM_TOKEN }}
+    message_thread_id: 42
+    message: Hello from GitHub Actions!
 ```
 
 Send message using custom proxy (support `http`, `https`, and `socks5`) like `socks5://127.0.0.1:1080` or `http://222.124.154.19:23500`
