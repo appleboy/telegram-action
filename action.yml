@@ -36,6 +36,8 @@ inputs:
     description: 'disables link previews for links in this message'
   disable_notification:
     description: 'disables notifications for this message, supports sending a message without notification,'
+  message_thread_id:
+    description: 'unique identifier for the target message thread (topic) of the forum; for forum supergroups only'
 runs:
   using: 'docker'
   image: 'Dockerfile'
