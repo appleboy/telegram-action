@@ -1,0 +1,89 @@
+name: Trivy Security Scan
+
+on:
+  schedule:
+    # Run at 00:00 on day 1 of every 3rd month (January, April, July, October)
+    - cron: "0 0 1 */3 *"
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  security-events: write # For uploading results to GitHub Security tab
+
+jobs:
+  trivy-scan:
+    name: Trivy Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Run Trivy vulnerability scanner in repo mode
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          format: "sarif"
+          output: "trivy-results.sarif"
+          severity: "CRITICAL,HIGH"
+
+      - name: Upload Trivy results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with:
+          sarif_file: "trivy-results.sarif"
+
+      - name: Run Trivy vulnerability scanner (table output)
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          format: "table"
+          severity: "CRITICAL,HIGH"
+          exit-code: "1"
+
+  trivy-docker:
+    name: Trivy Docker Image Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Build Docker image
+        run: docker build -t telegram-action:latest .
+
+      - name: Run Trivy vulnerability scanner on Docker image
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: "image"
+          image-ref: "telegram-action:latest"
+          format: "sarif"
+          output: "trivy-docker-results.sarif"
+          severity: "CRITICAL,HIGH"
+
+      - name: Upload Trivy Docker results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with:
+          sarif_file: "trivy-docker-results.sarif"
+
+      # Gated at CRITICAL only: base images may carry upstream HIGHs that can
+      # only be cleared by an upstream rebuild. They remain visible in the
+      # Security tab via the SARIF upload above.
+      - name: Run Trivy vulnerability scanner on Docker image (table output)
+        uses: aquasecurity/trivy-action@v0.36.0
+        if: always()
+        with:
+          scan-type: "image"
+          image-ref: "telegram-action:latest"
+          format: "table"
+          severity: "CRITICAL"
+          exit-code: "1"
