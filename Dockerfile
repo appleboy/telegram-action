@@ -1,4 +1,4 @@
-FROM ghcr.io/appleboy/drone-telegram:1.4.0
+FROM ghcr.io/appleboy/drone-telegram:1.4.2
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
