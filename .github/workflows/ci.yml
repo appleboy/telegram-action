@@ -1,5 +1,8 @@
 name: telegram message
-on: [push]
+on:
+  push:
+    branches:
+      - "**"
 jobs:
   # Tests the working-tree Dockerfile and entrypoint.sh; the build job below
   # runs against the published image referenced by action.yml instead.
