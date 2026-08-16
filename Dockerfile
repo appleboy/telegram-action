@@ -1,7 +1,6 @@
 FROM ghcr.io/appleboy/drone-telegram:1.5.0
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 WORKDIR /github/workspace
 
