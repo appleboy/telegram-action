@@ -40,7 +40,7 @@ inputs:
     description: 'unique identifier for the target message thread (topic) of the forum; for forum supergroups only'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/appleboy/telegram-action:latest'
+  image: 'docker://ghcr.io/appleboy/telegram-action:1.1.0'
 
 branding:
   icon: 'message-square'
