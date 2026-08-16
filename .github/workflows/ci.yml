@@ -84,6 +84,28 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message_file: tests/message.txt
 
+      # Regression test for issue #68: step outputs written to $GITHUB_OUTPUT
+      # must be usable inside the message input. The step producing the
+      # output needs an `id` so it can be referenced via steps.<id>.outputs.
+      - name: set step output
+        id: repo-discussion
+        run: |
+          COUNT=42
+          echo "discussionCount=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: verify step output is interpolated
+        run: |
+          test "${{ steps.repo-discussion.outputs.discussionCount }}" = "42"
+
+      - name: send message with step output (issue #68)
+        uses: ./
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            There are currently ${{ steps.repo-discussion.outputs.discussionCount }} discussions, come on!
+          format: markdown
+
       # - name: send message using socks5 proxy URL
       #   uses: appleboy/telegram-action@master
       #   with:
