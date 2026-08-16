@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
-        uses: appleboy/telegram-action@v1.1.0
+        uses: appleboy/telegram-action@v1.1.1
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -41,7 +41,7 @@ Remove the `message` input to send the default message.
 
 ```yml
 - name: send default message
-  uses: appleboy/telegram-action@v1.1.0
+  uses: appleboy/telegram-action@v1.1.1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -79,7 +79,7 @@ Send photo message:
 ```yml
 - uses: actions/checkout@v7
 - name: send photo message
-  uses: appleboy/telegram-action@v1.1.0
+  uses: appleboy/telegram-action@v1.1.1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -92,7 +92,7 @@ Send location message:
 
 ```yml
 - name: send location message
-  uses: appleboy/telegram-action@v1.1.0
+  uses: appleboy/telegram-action@v1.1.1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -104,7 +104,7 @@ Send a message to a specific forum topic (thread):
 
 ```yml
 - name: send message to forum topic
-  uses: appleboy/telegram-action@v1.1.0
+  uses: appleboy/telegram-action@v1.1.1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -116,7 +116,7 @@ Send message using custom proxy (support `http`, `https`, and `socks5`) like `so
 
 ```yml
 - name: send message using socks5 proxy URL
-  uses: appleboy/telegram-action@v1.1.0
+  uses: appleboy/telegram-action@v1.1.1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
