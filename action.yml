@@ -4,8 +4,10 @@ author: 'Bo-Yi Wu'
 inputs:
   to:
     description: 'telegram user'
+    required: true
   token:
     description: 'telegram token'
+    required: true
   message:
     description: 'telegram message'
   message_file:
