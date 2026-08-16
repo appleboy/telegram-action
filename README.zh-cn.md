@@ -42,7 +42,7 @@
 ```yml
 - uses: actions/checkout@v7
 - name: send photo message
-  uses: appleboy/telegram-action@v1.1.1
+  uses: appleboy/telegram-action@v1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -55,7 +55,7 @@
 
 ```yml
 - name: send location message
-  uses: appleboy/telegram-action@v1.1.1
+  uses: appleboy/telegram-action@v1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -67,7 +67,7 @@
 
 ```yml
 - name: send message using socks5 proxy URL
-  uses: appleboy/telegram-action@v1.1.1
+  uses: appleboy/telegram-action@v1
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
