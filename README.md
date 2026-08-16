@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
-        uses: appleboy/telegram-action@master
+        uses: appleboy/telegram-action@v1.1.0
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -37,11 +37,11 @@ jobs:
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 ```
 
-Remove `args` to send the default message.
+Remove the `message` input to send the default message.
 
 ```yml
 - name: send default message
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -53,6 +53,8 @@ Remove `args` to send the default message.
 
 | Variable                 | Description                                                                                                             |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| to                       | **required**. Unique identifier for the target chat.                                                                    |
+| token                    | **required**. Telegram authorization token.                                                                             |
 | socks5                   | optional. Support socks5 proxy URL                                                                                      |
 | photo                    | optional. Photo message                                                                                                 |
 | document                 | optional. Document message                                                                                              |
@@ -75,9 +77,9 @@ Remove `args` to send the default message.
 Send photo message:
 
 ```yml
-- uses: actions/checkout@master
+- uses: actions/checkout@v7
 - name: send photo message
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -90,7 +92,7 @@ Send location message:
 
 ```yml
 - name: send location message
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -102,7 +104,7 @@ Send a message to a specific forum topic (thread):
 
 ```yml
 - name: send message to forum topic
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -114,7 +116,7 @@ Send message using custom proxy (support `http`, `https`, and `socks5`) like `so
 
 ```yml
 - name: send message using socks5 proxy URL
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}

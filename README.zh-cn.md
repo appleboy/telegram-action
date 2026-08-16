@@ -16,6 +16,8 @@
 
 | 变量                     | 描述                                                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| to                       | **必填**。目标聊天的唯一标识符                                                                          |
+| token                    | **必填**。Telegram 授权令牌                                                                             |
 | socks5                   | 可选。支持 socks5 代理 URL                                                                              |
 | photo                    | 可选。照片消息                                                                                          |
 | document                 | 可选。文档消息                                                                                          |
@@ -29,6 +31,7 @@
 | format                   | 可选。`markdown` 或 `html`。参见 [MarkdownV2 样式](https://core.telegram.org/bots/api#markdownv2-style) |
 | message                  | 可选。自定义消息                                                                                        |
 | message_file             | 可选。用指定文件的内容覆盖默认消息模板。                                                                |
+| message_thread_id        | 可选。论坛目标消息串（主题）的唯一标识符，仅适用于论坛超级群组。                                        |
 | disable_web_page_preview | 可选。禁用此消息中链接的预览。默认值为 `false`。                                                        |
 | disable_notification     | 可选。禁用此消息的通知，支持发送无通知的消息。默认值为 `false`。                                        |
 
@@ -37,9 +40,9 @@
 发送照片消息：
 
 ```yml
-- uses: actions/checkout@master
+- uses: actions/checkout@v7
 - name: send photo message
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -52,7 +55,7 @@
 
 ```yml
 - name: send location message
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -64,7 +67,7 @@
 
 ```yml
 - name: send message using socks5 proxy URL
-  uses: appleboy/telegram-action@master
+  uses: appleboy/telegram-action@v1.1.0
   with:
     to: ${{ secrets.TELEGRAM_TO }}
     token: ${{ secrets.TELEGRAM_TOKEN }}
