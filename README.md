@@ -46,7 +46,7 @@ appleboy/telegram-action/telegram message triggered by appleboy (push)
 ![workflow](./images/telegram-workflow.png)
 
 > `@v1` follows the latest `v1.x` release. Pin an exact version such as
-> `appleboy/telegram-action@v1.1.1` if you want fully reproducible builds.
+> `appleboy/telegram-action@v1.1.2` if you want fully reproducible builds.
 
 ## Setup
 

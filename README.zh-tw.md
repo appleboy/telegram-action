@@ -46,7 +46,7 @@ appleboy/telegram-action/telegram message triggered by appleboy (push)
 ![workflow](./images/telegram-workflow.png)
 
 > `@v1` 會追蹤 `v1.x` 的最新版本。如需完全可重現的建置，請鎖定確切版本，
-> 例如 `appleboy/telegram-action@v1.1.1`。
+> 例如 `appleboy/telegram-action@v1.1.2`。
 
 ## 設定步驟
 
