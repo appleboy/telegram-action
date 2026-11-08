@@ -1,4 +1,4 @@
-FROM ghcr.io/appleboy/drone-telegram:1.5.1
+FROM ghcr.io/appleboy/drone-telegram:1.5.3
 
 COPY entrypoint.sh /entrypoint.sh
 
